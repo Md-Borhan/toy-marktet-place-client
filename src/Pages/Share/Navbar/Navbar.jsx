@@ -9,7 +9,7 @@ const Navbar = () => {
   const { user } = useContext(AuthContext);
   return (
     <div className="">
-      <div className="navbar relative bg-white">
+      <div className="navbar relative px-4 md:px-8 bg-white">
         <div className="navbar-start">
           <Link className="btn btn-ghost normal-case text-xl">
             <img src={logo} alt="" />
