@@ -4,8 +4,8 @@ import { GiSunkenEye, GiEyelashes } from "react-icons/gi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { AuthContext } from "../../Routes/AuthProvider";
 import "./login.css";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const { loginWithEmail, loginWithGoogle, loginWithGithub, resetPassword } =

@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Routes/AuthProvider";
 import { GiSunkenEye, GiEyelashes } from "react-icons/gi";
 import Navbar from "../Share/Navbar/Navbar";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
   const { createUserWithEmail, updateUserProfile } = useContext(AuthContext);
