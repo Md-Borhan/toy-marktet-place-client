@@ -3,6 +3,7 @@ import Footer from "../../Share/Footer/Footer";
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
 import ShopCategory from "../ShopCategory/ShopCategory";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Gallery></Gallery>
       <ShopCategory></ShopCategory>
       <Footer></Footer>
+      <Toaster />
     </div>
   );
 };

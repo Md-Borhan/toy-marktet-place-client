@@ -25,7 +25,7 @@ const Gallery = () => {
         <div className="flex flex-wrap -m-4">
           {galleryData?.map((sd) => (
             <div key={sd._id} className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative transition-all shadow-lg  border-dashed border-2 border-slate-400 rounded-lg">
+              <div className="flex relative transition-all shadow-lg  border-dashed border-2 border-slate-400 hover:border-slate-500 rounded-lg">
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
