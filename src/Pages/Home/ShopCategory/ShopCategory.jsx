@@ -1,12 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-import "./shopCategory.css";
+import { useContext } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import "./shopCategory.css";
 import { toast } from "react-hot-toast";
 const ShopCategory = () => {
-  const { user } = useContext(AuthContext);
-  const [galleryData, setGalleryData] = useState([]);
+  const { user, productsData } = useContext(AuthContext);
 
   const handleDetails = (id) => {
     console.log(id);
@@ -15,13 +14,6 @@ const ShopCategory = () => {
     }
   };
 
-  useEffect(() => {
-    (async function () {
-      const res = await fetch("http://localhost:5000/products");
-      const data = await res.json();
-      setGalleryData(data);
-    })();
-  }, []);
   return (
     <div className="pt-24">
       <div className="category text-center py-12">
@@ -37,7 +29,7 @@ const ShopCategory = () => {
         <div>
           <Tabs>
             <TabList>
-              <Tab className="text-white inline-block p-4 font-medium">
+              <Tab className="text-white border-0 inline-block p-4 font-medium">
                 Police Car
               </Tab>
               <Tab className="text-white inline-block p-4 font-medium">
@@ -53,7 +45,7 @@ const ShopCategory = () => {
                 Police Car
               </h2>
               <div className="flex gap-6 items-center justify-evenly container mx-auto">
-                {galleryData.slice(0, 2)?.map((sd) => (
+                {productsData.slice(0, 2)?.map((sd) => (
                   <div
                     key={sd._id}
                     className="card border-dashed border-2 border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"
@@ -74,7 +66,7 @@ const ShopCategory = () => {
                       <div className="card-actions mt-4 justify-end">
                         <button
                           onClick={() => handleDetails(sd._id)}
-                          className="btn hover:text-white bg-transparent shadow-blue-200 shadow-md hover:bg-gray-500 text-black font-semibold border border-gray-700"
+                          className="btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 shadow-md text-black font-semibold border border-gray-700"
                         >
                           View Details Button
                         </button>
@@ -89,7 +81,7 @@ const ShopCategory = () => {
                 Mini Fire Truck
               </h2>
               <div className="flex gap-6 items-center justify-evenly container mx-auto">
-                {galleryData.slice(2, 4)?.map((sd) => (
+                {productsData.slice(2, 4)?.map((sd) => (
                   <div
                     key={sd._id}
                     className="card border-dashed border-2 border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"
@@ -108,7 +100,10 @@ const ShopCategory = () => {
                         <p>Ratings: {sd.rating}</p>
                       </div>
                       <div className="card-actions mt-4 justify-end">
-                        <button className="btn hover:text-white bg-transparent shadow-blue-200 shadow-md hover:bg-gray-500 text-black font-semibold border border-gray-700">
+                        <button
+                          onClick={() => handleDetails(sd._id)}
+                          className="btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 shadow-md text-black font-semibold border border-gray-700"
+                        >
                           View Details Button
                         </button>
                       </div>
@@ -122,7 +117,7 @@ const ShopCategory = () => {
                 Regular Car
               </h2>
               <div className="flex gap-6 items-center justify-evenly container mx-auto">
-                {galleryData.slice(4, 6)?.map((sd) => (
+                {productsData.slice(4, 6)?.map((sd) => (
                   <div
                     key={sd._id}
                     className="card border-dashed border-2 border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"
@@ -141,7 +136,10 @@ const ShopCategory = () => {
                         <p>Ratings: {sd.rating}</p>
                       </div>
                       <div className="card-actions mt-4 justify-end">
-                        <button className="btn hover:text-white bg-transparent shadow-blue-200 shadow-md hover:bg-gray-500 text-black font-semibold border border-gray-700">
+                        <button
+                          onClick={() => handleDetails(sd._id)}
+                          className="btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 shadow-md text-black font-semibold border border-gray-700"
+                        >
                           View Details Button
                         </button>
                       </div>

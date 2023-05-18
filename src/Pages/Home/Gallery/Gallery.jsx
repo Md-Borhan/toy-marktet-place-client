@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Gallery = () => {
-  const [galleryData, setGalleryData] = useState([]);
-
-  useEffect(() => {
-    (async function () {
-      const res = await fetch("http://localhost:5000/products");
-      const data = await res.json();
-      setGalleryData(data);
-    })();
-  }, []);
+  const { productsData } = useContext(AuthContext);
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 pt-24 mx-auto">
@@ -23,7 +16,7 @@ const Gallery = () => {
           </p>
         </div>
         <div className="flex flex-wrap -m-4">
-          {galleryData?.map((sd) => (
+          {productsData?.map((sd) => (
             <div key={sd._id} className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex relative transition-all shadow-lg  border-dashed border-2 border-slate-400 hover:border-slate-500 rounded-lg">
                 <img

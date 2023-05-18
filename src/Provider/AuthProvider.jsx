@@ -57,6 +57,16 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const res = await fetch("http://localhost:5000/products");
+      const data = await res.json();
+      setProductsData(data);
+    })();
+  }, []);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setLoader(false);
@@ -76,6 +86,7 @@ const AuthProvider = ({ children }) => {
     loginWithGoogle,
     loginWithGithub,
     logOut,
+    productsData,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -5,3 +5,10 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.react-tabs__tab--selected {
+  background: linear-gradient(
+    270deg,
+    rgba(194, 224, 235, 1) 0%,
+    rgba(184, 220, 182, 1) 100%
+  );
+}
