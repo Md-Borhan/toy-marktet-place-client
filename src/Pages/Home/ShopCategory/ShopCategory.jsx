@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import "./shopCategory.css";
 import { toast } from "react-hot-toast";
 const ShopCategory = () => {
-  const { user, productsData } = useContext(AuthContext);
+  const { user, products } = useContext(AuthContext);
 
   const handleDetails = (id) => {
     console.log(id);
@@ -45,7 +45,7 @@ const ShopCategory = () => {
                 Police Car
               </h2>
               <div className="flex gap-6 items-center justify-evenly container mx-auto">
-                {productsData.slice(0, 2)?.map((sd) => (
+                {products.slice(0, 2)?.map((sd) => (
                   <div
                     key={sd._id}
                     className="card border-dashed border-2 border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"
@@ -81,7 +81,7 @@ const ShopCategory = () => {
                 Mini Fire Truck
               </h2>
               <div className="flex gap-6 items-center justify-evenly container mx-auto">
-                {productsData.slice(2, 4)?.map((sd) => (
+                {products.slice(2, 4)?.map((sd) => (
                   <div
                     key={sd._id}
                     className="card border-dashed border-2 border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"
@@ -117,7 +117,7 @@ const ShopCategory = () => {
                 Regular Car
               </h2>
               <div className="flex gap-6 items-center justify-evenly container mx-auto">
-                {productsData.slice(4, 6)?.map((sd) => (
+                {products.slice(4, 6)?.map((sd) => (
                   <div
                     key={sd._id}
                     className="card border-dashed border-2 border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"

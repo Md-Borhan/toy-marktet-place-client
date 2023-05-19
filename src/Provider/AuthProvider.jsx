@@ -57,13 +57,13 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const [productsData, setProductsData] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     (async function () {
       const res = await fetch("http://localhost:5500/products");
       const data = await res.json();
-      setProductsData(data);
+      setProducts(data);
     })();
   }, []);
 
@@ -86,7 +86,7 @@ const AuthProvider = ({ children }) => {
     loginWithGoogle,
     loginWithGithub,
     logOut,
-    productsData,
+    products,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

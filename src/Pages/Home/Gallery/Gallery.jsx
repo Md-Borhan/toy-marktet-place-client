@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Gallery = () => {
-  const { productsData } = useContext(AuthContext);
+  const { products } = useContext(AuthContext);
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 pt-24 mx-auto">
@@ -16,7 +16,7 @@ const Gallery = () => {
           </p>
         </div>
         <div className="flex flex-wrap -m-4">
-          {productsData?.map((sd) => (
+          {products?.map((sd) => (
             <div key={sd._id} className="lg:w-1/3 sm:w-1/2 p-4">
               <div className="flex h-[204px] relative transition-all shadow-lg  border-dashed border-2 border-slate-400 hover:border-slate-500 rounded-lg">
                 <img
