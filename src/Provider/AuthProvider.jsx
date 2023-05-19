@@ -61,7 +61,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     (async function () {
-      const res = await fetch("http://localhost:5000/products");
+      const res = await fetch("http://localhost:5500/products");
       const data = await res.json();
       setProductsData(data);
     })();

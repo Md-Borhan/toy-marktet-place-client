@@ -118,7 +118,7 @@ const Register = () => {
                 </div>
               </div>
               <p className="text-red-600 mt-3">{errorText}</p>
-              <p className="text-success mt-3">{successText}</p>
+              <p className="text-gray-700 mt-3">{successText}</p>
               <div className="form-control mt-4">
                 <button className="btn bg-indigo-400 opacity-80 hover:bg-indigo-500 text-black border-indigo-500 shadow-blue-200 shadow-md btn-error">
                   Register

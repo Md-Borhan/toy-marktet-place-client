@@ -5,7 +5,9 @@ import Gallery from "../Gallery/Gallery";
 import ShopCategory from "../ShopCategory/ShopCategory";
 import { Toaster } from "react-hot-toast";
 import { useNavigation } from "react-router-dom";
-import Loader from "../../Share/Loader/Loader";
+import Loader from "../../Loader/Loader";
+import Facilities from "../Facilities/Facilities";
+import Contact from "../Contact/Contact";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -18,6 +20,8 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       <ShopCategory></ShopCategory>
+      <Facilities></Facilities>
+      <Contact></Contact>
       <Footer></Footer>
       <Toaster />
     </div>

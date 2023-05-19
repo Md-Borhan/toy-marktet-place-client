@@ -58,7 +58,7 @@ const ShopCategory = () => {
                       />
                     </figure>
                     <div className="p-6">
-                      <h2 className="card-title">{sd.name}</h2>
+                      <h2 className="card-title text-gray-700">{sd.name}</h2>
                       <div className="flex items-center justify-between">
                         <p>Price: ${sd.price}</p>
                         <p>Ratings: {sd.rating}</p>
@@ -94,7 +94,7 @@ const ShopCategory = () => {
                       />
                     </figure>
                     <div className="p-6">
-                      <h2 className="card-title">{sd.name}</h2>
+                      <h2 className="card-title text-gray-700">{sd.name}</h2>
                       <div className="flex items-center justify-between">
                         <p>Price: ${sd.price}</p>
                         <p>Ratings: {sd.rating}</p>
@@ -130,7 +130,7 @@ const ShopCategory = () => {
                       />
                     </figure>
                     <div className="p-6">
-                      <h2 className="card-title">{sd.name}</h2>
+                      <h2 className="card-title text-gray-700">{sd.name}</h2>
                       <div className="flex items-center justify-between">
                         <p>Price: ${sd.price}</p>
                         <p>Ratings: {sd.rating}</p>
