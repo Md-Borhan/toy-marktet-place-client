@@ -1,11 +1,11 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
-  const { products } = useContext(AuthContext);
+  const products = useLoaderData();
   console.log(products);
+
   return (
     <div>
       <Navbar></Navbar>
@@ -28,16 +28,20 @@ const AllToys = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            {products?.slice(6).map((product, index) => (
+            {products?.map((product, index) => (
               <tr key={product?._id}>
-                <th>{index}</th>
+                <th>{index + 1}</th>
                 <td>{product.sellerName}</td>
                 <td>{product.name}</td>
                 <td>{product.category}</td>
-                <td>{product.price}</td>
+                <td>${product.price}</td>
                 <td>{product.quantity}</td>
                 <td>
-                  <button className="btn btn-xs">Tiny</button>
+                  <Link to={`/toyDetails/${product._id}`}>
+                    <button className="modalBtn btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] btn-xs shadow-blue-200 px-10 shadow-md text-black font-semibold border border-gray-400 hover:border-gray-700 ">
+                      View Details button
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}
