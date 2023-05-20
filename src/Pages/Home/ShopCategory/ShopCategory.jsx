@@ -7,8 +7,7 @@ import { toast } from "react-hot-toast";
 const ShopCategory = () => {
   const { user, products } = useContext(AuthContext);
 
-  const handleDetails = (id) => {
-    console.log(id);
+  const handleDetails = () => {
     if (!user) {
       return toast.error("You have to log in first to view details.");
     }
@@ -136,12 +135,52 @@ const ShopCategory = () => {
                         <p>Ratings: {sd.rating}</p>
                       </div>
                       <div className="card-actions mt-4 justify-end">
-                        <button
+                        {/* The button to open modal */}
+                        <label
                           onClick={() => handleDetails(sd._id)}
+                          htmlFor="my-modal-5"
                           className="btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 shadow-md text-black font-semibold border border-gray-700"
                         >
                           View Details Button
-                        </button>
+                        </label>
+
+                        {/* Put this part before </body> tag */}
+                        <input
+                          type="checkbox"
+                          id="my-modal-5"
+                          className="modal-toggle"
+                        />
+                        <div className="modal">
+                          <div className="modal-box w-11/12 max-w-5xl">
+                            <div
+                              key={sd._id}
+                              className="card border-dashed border-2 grid md:grid-cols-2 gap-5 items-center border-slate-400 hover:border-slate-500 card-compact bg-base-100 shadow-xl"
+                            >
+                              <figure>
+                                <img
+                                  className="h-[450px] w-[450px]"
+                                  src={sd.picture}
+                                  alt="Police Car"
+                                />
+                              </figure>
+                              <div className="p-6">
+                                <div className="text-left">
+                                  <h2 className="card-title text-gray-700">
+                                    {sd.name}
+                                  </h2>
+                                  <p>Price: ${sd.price}</p>
+                                  <p>Ratings: {sd.rating}</p>
+                                  <p>Description: {sd.description}</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="modal-action">
+                              <label htmlFor="my-modal-5" className="btn">
+                                Close
+                              </label>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
