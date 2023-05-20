@@ -82,7 +82,7 @@ const Navbar = () => {
               )}
               {user && (
                 <img
-                  className="h-20 border-gray-700 border-2 w-20 rounded-full"
+                  className="h-16 border-gray-700 border-2 w-16 rounded-full"
                   title={user.displayName}
                   src={user.photoURL}
                   alt="User"
@@ -140,7 +140,7 @@ const Navbar = () => {
             )}
             {user && (
               <img
-                className="h-20 border-gray-700 border-2 w-20 rounded-full"
+                className="h-16 border-gray-700 border-2 w-16 rounded-full"
                 title={user.displayName}
                 src={user.photoURL}
                 alt="User"

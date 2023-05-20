@@ -13,11 +13,7 @@ const Banner = () => {
             Give The Gift Of Your Children Everyday
           </p>
         </div>
-        <div
-          data-aos="fade-left"
-          data-aos-duration="6000"
-          className="pt-0 md:pt-8"
-        >
+        <div data-aos="fade-left" className="pt-0 md:pt-8">
           <img src={bannerImg} alt="" />
         </div>
       </div>

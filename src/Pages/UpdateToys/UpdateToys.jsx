@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 
 const UpdateToys = () => {
   const toys = useLoaderData();
+  const { _id, price, quantity, description } = toys;
   console.log(toys);
 
   const handleForm = (event) => {
@@ -21,8 +22,8 @@ const UpdateToys = () => {
     };
     console.log(addedToys);
 
-    fetch("http://localhost:5500/updateToy", {
-      method: "PATCH",
+    fetch(`http://localhost:5500/updateToy/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -30,9 +31,6 @@ const UpdateToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
-          toast.success("Successfully Update Toys!");
-        }
         console.log(data);
       });
   };
@@ -57,6 +55,7 @@ const UpdateToys = () => {
               <input
                 type="text"
                 required
+                defaultValue={price}
                 name="price"
                 placeholder="Price"
                 className="input input-bordered"
@@ -69,6 +68,7 @@ const UpdateToys = () => {
               <input
                 type="text"
                 required
+                defaultValue={quantity}
                 name="quantity"
                 placeholder="Quantity"
                 className="input input-bordered"
@@ -84,6 +84,7 @@ const UpdateToys = () => {
                 cols="30"
                 rows="10"
                 required
+                defaultValue={description}
                 name="description"
                 placeholder="description"
                 className="input input-bordered h-32"

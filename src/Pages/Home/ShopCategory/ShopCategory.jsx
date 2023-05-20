@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 const ShopCategory = () => {
   const { user, products } = useContext(AuthContext);
 
-  const handleDetails = () => {
+  const handleDetails = (id) => {
     if (!user) {
       return toast.error("You have to log in first to view details.");
     }

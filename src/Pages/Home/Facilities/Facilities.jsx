@@ -17,7 +17,7 @@ const Facilities = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all ">
         <div
           data-aos="fade-right"
-          className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden"
+          className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-300 hover:border-gray-500 border-4 relative overflow-hidden"
         >
           <img
             className="mx-auto"
@@ -39,7 +39,7 @@ const Facilities = () => {
         </div>
         <div
           data-aos="fade-up"
-          className="p-4 facilitiesCard space-y-3 md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden"
+          className="p-4 facilitiesCard space-y-3 md:p-8 text-center border-gray-300 hover:border-gray-500 border-4 relative overflow-hidden"
         >
           <img
             className="mx-auto"
@@ -57,7 +57,7 @@ const Facilities = () => {
         </div>
         <div
           data-aos="fade-left"
-          className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden"
+          className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-300 hover:border-gray-500 border-4 relative overflow-hidden"
         >
           <img
             className="mx-auto"

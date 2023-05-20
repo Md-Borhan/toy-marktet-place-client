@@ -13,6 +13,10 @@ const MyToys = () => {
   const [sortingValue, setSortingValue] = useState();
   console.log(sortingValue);
 
+  const handleUpdate = (id) => {
+    console.log(id);
+  };
+
   useEffect(() => {
     const url = `http://localhost:5500/myToys/${user?.email}`;
     fetch(url)
@@ -23,10 +27,16 @@ const MyToys = () => {
   }, [user]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5500/deleteToy/${id}`)
+    fetch(`http://localhost:5500/deleteToy/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.deletedCount > 0) {
+          alert("Delete Successfully!");
+          const remaining = myToys.filter((myToy) => myToy._id !== id);
+          setMyToys(remaining);
+        }
       });
   };
 
@@ -55,7 +65,7 @@ const MyToys = () => {
             <option value="ascending">Descending</option>
           </select>
         </div>
-        <div className="overflow-x-auto w-full">
+        <div className="overflow-x-auto w-full pb-10">
           <table className="table w-full">
             {/* head */}
             <thead>
@@ -81,9 +91,12 @@ const MyToys = () => {
                   <td>${myToy.price}</td>
                   <td>{myToy.quantity}</td>
                   <td>
-                    <Link to={`/updateToys/:${myToy._id}`}>
+                    <Link to={`/updateToys/${myToy._id}`}>
                       {" "}
-                      <button className="btn btn-ghost text-gray-700 btn-xs">
+                      <button
+                        onClick={() => handleUpdate(myToy._id)}
+                        className="btn btn-ghost text-gray-700 btn-xs"
+                      >
                         <FaRegEdit className="text-xl mr-1"></FaRegEdit>Update
                       </button>
                     </Link>

@@ -9,10 +9,10 @@
 }
 .errorPage {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.616),
-      rgba(255, 255, 255, 0.685)
+      rgba(219, 38, 38, 0.8),
+      rgba(172, 18, 18, 0.3)
     ),
-    url("../src/assets/error-page.jpg");
+    url("../src/assets/bg/errorPage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
