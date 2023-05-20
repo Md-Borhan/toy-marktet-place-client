@@ -15,7 +15,7 @@ const ShopCategory = () => {
 
   return (
     <div className="pt-24">
-      <div className="category text-center py-12">
+      <div className="category text-center  px-5 lg:px-0 py-12">
         <div className="mb-12">
           <h2 className="sm:text-5xl text-2xl font-bold title-font mb-4 text-white">
             Shop by Category
@@ -43,7 +43,7 @@ const ShopCategory = () => {
               <h2 className="sm:text-5xl my-12 text-2xl font-bold title-font text-white ">
                 Police Car
               </h2>
-              <div className="flex gap-6 items-center justify-evenly container mx-auto">
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-evenly container mx-auto">
                 {products.slice(0, 2)?.map((sd) => (
                   <div
                     key={sd._id}
@@ -79,7 +79,7 @@ const ShopCategory = () => {
               <h2 className="sm:text-5xl my-12 text-2xl font-bold title-font text-white ">
                 Mini Fire Truck
               </h2>
-              <div className="flex gap-6 items-center justify-evenly container mx-auto">
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-evenly container mx-auto">
                 {products.slice(2, 4)?.map((sd) => (
                   <div
                     key={sd._id}
@@ -115,7 +115,7 @@ const ShopCategory = () => {
               <h2 className="sm:text-5xl my-12 text-2xl font-bold title-font text-white ">
                 Regular Car
               </h2>
-              <div className="flex gap-6 items-center justify-evenly container mx-auto">
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-evenly container mx-auto">
                 {products.slice(4, 6)?.map((sd) => (
                   <div
                     key={sd._id}

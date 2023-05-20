@@ -14,7 +14,7 @@ const Contact = () => {
             </p>
           </div>
           <div className="flex px-5 md:px-0 flex-wrap justify-between gap-6 bg-red-50  md:space-y-0 space-y-6">
-            <div className="w-full md:w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
+            <div className="w-full lg:w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
               <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
                 <img
                   src="https://htmldemo.net/kidol/kidol/assets/img/icons/5.png"
@@ -30,7 +30,7 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-            <div className="w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
+            <div className="w-full lg:w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
               <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
                 <img
                   src="https://htmldemo.net/kidol/kidol/assets/img/icons/6.png"
@@ -44,7 +44,7 @@ const Contact = () => {
                 <p className="leading-relaxed text-base">+ 00 123 456 789</p>
               </div>
             </div>
-            <div className="w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
+            <div className="w-full lg:w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
               <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
                 <img
                   src="https://htmldemo.net/kidol/kidol/assets/img/icons/7.png"
