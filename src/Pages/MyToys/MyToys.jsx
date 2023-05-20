@@ -18,6 +18,14 @@ const MyToys = () => {
         setMyToys(data);
       });
   }, [user]);
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5500/deleteToy/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <div>
       <Navbar></Navbar>
@@ -58,7 +66,10 @@ const MyToys = () => {
                   </Link>
                 </td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">
+                  <button
+                    onClick={() => handleDelete(myToy._id)}
+                    className="btn btn-ghost btn-xs"
+                  >
                     <RiDeleteBin5Line className="text-xl mr-2"></RiDeleteBin5Line>
                     Delete
                   </button>

@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateToys = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user?.email);
+  const toys = useLoaderData();
+  console.log(toys);
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -21,8 +20,8 @@ const UpdateToys = () => {
     };
     console.log(addedToys);
 
-    fetch("http://localhost:5500/allToys", {
-      method: "POST",
+    fetch("http://localhost:5500/updateToy", {
+      method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
