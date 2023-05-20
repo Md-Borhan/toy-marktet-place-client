@@ -11,7 +11,10 @@ const Contact = () => {
       <div className="w-full md:w-3/4 mx-auto">
         <section className="text-gray-600 body-font">
           <div className="">
-            <div className="flex flex-col text-center w-full  px-5 md:px-0 mb-10  lg:mb-20">
+            <div
+              data-aos="fade-left"
+              className="flex flex-col text-center w-full  px-5 md:px-0 mb-10  lg:mb-20"
+            >
               <h1 className="sm:text-5xl text-2xl font-bold title-font mb-4 text-gray-700">
                 Contact Us
               </h1>

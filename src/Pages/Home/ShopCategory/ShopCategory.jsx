@@ -16,7 +16,7 @@ const ShopCategory = () => {
   return (
     <div className="pt-24">
       <div className="category text-center  px-5 lg:px-0 py-12">
-        <div className="mb-12">
+        <div className="mb-12" data-aos="fade-up">
           <h2 className="sm:text-5xl text-2xl font-bold title-font mb-4 text-white">
             Shop by Category
           </h2>
@@ -39,7 +39,7 @@ const ShopCategory = () => {
               </Tab>
             </TabList>
 
-            <TabPanel>
+            <TabPanel data-aos="fade-up">
               <h2 className="sm:text-5xl my-12 text-2xl font-bold title-font text-white ">
                 Police Car
               </h2>

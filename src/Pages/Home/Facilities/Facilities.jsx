@@ -2,7 +2,10 @@ import "./facilities.css";
 const Facilities = () => {
   return (
     <div className="pt-10 lg:pt-24 pb-10 lg:pb-24 container mx-auto px-5">
-      <div className="flex flex-col text-center w-full mb-10 lg:mb-20">
+      <div
+        data-aos="fade-right"
+        className="flex flex-col text-center w-full mb-10 lg:mb-20"
+      >
         <h1 className="sm:text-5xl text-2xl font-bold title-font mb-4 text-gray-700">
           Our Facilities
         </h1>
@@ -12,7 +15,10 @@ const Facilities = () => {
         </p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all ">
-        <div className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden">
+        <div
+          data-aos="fade-right"
+          className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden"
+        >
           <img
             className="mx-auto"
             src="https://htmldemo.net/kidol/kidol/assets/img/icons/f1.png"
@@ -31,7 +37,10 @@ const Facilities = () => {
             />
           </div>
         </div>
-        <div className="p-4 facilitiesCard space-y-3 md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden">
+        <div
+          data-aos="fade-up"
+          className="p-4 facilitiesCard space-y-3 md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden"
+        >
           <img
             className="mx-auto"
             src="https://htmldemo.net/kidol/kidol/assets/img/icons/f2.png"
@@ -46,7 +55,10 @@ const Facilities = () => {
             />
           </div>
         </div>
-        <div className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden">
+        <div
+          data-aos="fade-left"
+          className="p-4 space-y-3 facilitiesCard md:p-8 text-center border-gray-400 hover:border-gray-500 border-4 relative overflow-hidden"
+        >
           <img
             className="mx-auto"
             src="https://htmldemo.net/kidol/kidol/assets/img/icons/f3.png"
