@@ -1,6 +1,7 @@
 import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
 import { Link, useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AllToys = () => {
   const products = useLoaderData();
@@ -8,6 +9,11 @@ const AllToys = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Kidol | All Toys</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Navbar></Navbar>
       <h1 className="sm:text-5xl my-16 pb-8 text-center text-2xl font-bold title-font mb-4 text-gray-700">
         All Toys

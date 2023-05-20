@@ -2,6 +2,7 @@ import { toast } from "react-hot-toast";
 import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const UpdateToys = () => {
   const toys = useLoaderData();
@@ -37,6 +38,11 @@ const UpdateToys = () => {
   };
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Kidol | Update Toys</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Navbar></Navbar>
       <h2 className="sm:text-5xl py-10 text-2xl font-bold title-font mb-4 text-center">
         Update Toys

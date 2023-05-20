@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { GiSunkenEye, GiEyelashes } from "react-icons/gi";
 import Navbar from "../Share/Navbar/Navbar";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createUserWithEmail, updateUserProfile } = useContext(AuthContext);
@@ -48,6 +49,11 @@ const Register = () => {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Kidol | Register</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Navbar></Navbar>
       <div className="px-3 py-5 loginBg">
         <div className="w-full bg-indigo-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 sm:w-4/5  md:w-3/5 xl:w-2/5 2xl:w-1/3 sm:mx-auto shadow-blue-100 shadow-md">
