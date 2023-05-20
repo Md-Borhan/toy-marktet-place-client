@@ -3,7 +3,7 @@ const Contact = () => {
     <div className="w-full md:w-3/4 mx-auto">
       <section className="text-gray-600 body-font">
         <div className="">
-          <div className="flex flex-col text-center w-full mb-20">
+          <div className="flex flex-col text-center w-full  px-5 md:px-0 mb-10  lg:mb-20">
             <h1 className="sm:text-5xl text-2xl font-bold title-font mb-4 text-gray-700">
               Contact Us
             </h1>
@@ -13,8 +13,8 @@ const Contact = () => {
               text.
             </p>
           </div>
-          <div className="flex flex-wrap justify-between gap-6 bg-red-50  md:space-y-0 space-y-6">
-            <div className="w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
+          <div className="flex px-5 md:px-0 flex-wrap justify-between gap-6 bg-red-50  md:space-y-0 space-y-6">
+            <div className="w-full md:w-72 py-8 flex flex-col text-center items-center shadow-lg rounded-lg">
               <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
                 <img
                   src="https://htmldemo.net/kidol/kidol/assets/img/icons/5.png"
@@ -69,8 +69,8 @@ const Contact = () => {
             </h1>
           </div>
           <div className="w-full mx-auto">
-            <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
+            <div className="flex flex-col md:flex-row flex-wrap -m-2">
+              <div className="p-2 w-full md:w-1/2">
                 <div className="relative">
                   <label
                     htmlFor="name"
@@ -86,7 +86,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              <div className="p-2 w-1/2">
+              <div className="p-2 w-full md:w-1/2">
                 <div className="relative">
                   <label
                     htmlFor="email"

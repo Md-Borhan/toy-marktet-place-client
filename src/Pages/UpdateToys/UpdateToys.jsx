@@ -1,10 +1,8 @@
 import { useContext, useState } from "react";
-import Footer from "../Share/Footer/Footer";
-import Navbar from "../Share/Navbar/Navbar";
-import { Toaster, toast } from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
-const AddToys = () => {
+const UpdateToys = () => {
   const { user } = useContext(AuthContext);
   console.log(user?.email);
   const [selectValue, setSelectValue] = useState("");
@@ -49,17 +47,16 @@ const AddToys = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          toast.success("Successfully Toys Added!");
+          toast.success("Successfully Update Toys!");
         }
         console.log(data);
       });
   };
   return (
     <div>
-      <Navbar></Navbar>
-      <h1 className="sm:text-5xl my-16 pb-8 text-center text-2xl font-bold title-font mb-4 text-gray-700">
-        Add A Toys
-      </h1>
+      <h2 className="sm:text-5xl py-10 text-2xl font-bold title-font mb-4 text-center">
+        Update Toys
+      </h2>
       <div className="container px-5 py-8 mb-10 mx-auto card flex-shrink-0 w-full shadow-2xl bg-base-100">
         <form onSubmit={handleForm}>
           <div className="grid grid-cols-2 items-center gap-5 mb-5">
@@ -206,10 +203,8 @@ const AddToys = () => {
           </div>
         </form>
       </div>
-      <Footer></Footer>
-      <Toaster />
     </div>
   );
 };
 
-export default AddToys;
+export default UpdateToys;

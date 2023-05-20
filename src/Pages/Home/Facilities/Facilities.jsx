@@ -1,8 +1,8 @@
 import "./facilities.css";
 const Facilities = () => {
   return (
-    <div className="pt-24 pb-24 container mx-auto px-5">
-      <div className="flex flex-col text-center w-full mb-20">
+    <div className="pt-10 lg:pt-24 pb-10 lg:pb-24 container mx-auto px-5">
+      <div className="flex flex-col text-center w-full mb-10 lg:mb-20">
         <h1 className="sm:text-5xl text-2xl font-bold title-font mb-4 text-gray-700">
           Our Facilities
         </h1>

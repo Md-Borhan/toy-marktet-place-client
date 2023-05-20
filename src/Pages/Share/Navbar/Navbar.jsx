@@ -16,7 +16,7 @@ const Navbar = () => {
   };
   return (
     <div className="">
-      <div className="navbar relative px-4 md:px-8 bg-white justify-between">
+      <div className="navbar px-4 md:px-8 bg-white justify-between">
         <div className="navbar-start w-auto">
           <Link className="btn btn-ghost normal-case text-xl">
             <img src={logo} alt="" />
@@ -36,7 +36,9 @@ const Navbar = () => {
             </li>
             {user && (
               <li>
-                <Link className="font-medium text-lg">My Toys</Link>
+                <Link to="/myToys" className="font-medium text-lg">
+                  My Toys
+                </Link>
               </li>
             )}
             {user && (
@@ -73,9 +75,6 @@ const Navbar = () => {
               />
             )}
           </ul>
-        </div>
-        <div className="w-full left-0 absolute -bottom-5">
-          <img className="w-full" src={shape} alt="" />
         </div>
       </div>
     </div>
