@@ -6,16 +6,11 @@ import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
-  const [sortingValue, setSortingValue] = useState();
-  console.log(sortingValue);
-
-  const handleUpdate = (id) => {
-    console.log(id);
-  };
 
   useEffect(() => {
     const url = `http://localhost:5500/myToys/${user?.email}`;
@@ -32,16 +27,26 @@ const MyToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount > 0) {
-          alert("Delete Successfully!");
-          const remaining = myToys.filter((myToy) => myToy._id !== id);
-          setMyToys(remaining);
-        }
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed && data.deletedCount > 0) {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            const remaining = myToys.filter((myToy) => myToy._id !== id);
+            setMyToys(remaining);
+          }
+        });
       });
   };
 
-  const handleSortingValue = (event) => {
-    setSortingValue(event.target.value);
+  const handleSortingValue = () => {
+    /*  setSortingValue(event.target.value); */
   };
   return (
     <>
@@ -93,10 +98,7 @@ const MyToys = () => {
                   <td>
                     <Link to={`/updateToys/${myToy._id}`}>
                       {" "}
-                      <button
-                        onClick={() => handleUpdate(myToy._id)}
-                        className="btn btn-ghost text-gray-700 btn-xs"
-                      >
+                      <button className="btn btn-ghost text-gray-700 btn-xs">
                         <FaRegEdit className="text-xl mr-1"></FaRegEdit>Update
                       </button>
                     </Link>

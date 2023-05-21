@@ -2,7 +2,7 @@ import Navbar from "../../Share/Navbar/Navbar";
 import Footer from "../../Share/Footer/Footer";
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
-import ShopCategory from "../ShopCategory/ShopCategory";
+import ToysCategory from "../ShopCategory/ToysCategory";
 import { Toaster } from "react-hot-toast";
 import { useNavigation } from "react-router-dom";
 import Loader from "../../Loader/Loader";
@@ -22,11 +22,11 @@ const Home = () => {
     AOS.refresh();
   }, []);
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar></Navbar>
       <Banner></Banner>
       <Gallery></Gallery>
-      <ShopCategory></ShopCategory>
+      <ToysCategory></ToysCategory>
       <Facilities></Facilities>
       <Contact></Contact>
       <Footer></Footer>

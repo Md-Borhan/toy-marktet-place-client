@@ -18,3 +18,40 @@
   background-position: center;
   object-fit: cover;
 }
+
+.mainMenu.menu-horizontal :where(li) {
+  flex-direction: column;
+}
+.mainMenu.menu[class*=" px-"]:not(.menu[class*=" px-0"]) li > *,
+.menu[class^="px-"]:not(.menu[class^="px-0"]) li > *,
+.menu[class*=" p-"]:not(.menu[class*=" p-0"]) li > *,
+.menu[class^="p-"]:not(.menu[class^="p-0"]) li > * {
+  border-radius: 10px;
+}
+.mainMenu.menu
+  :where(li:not(.menu-title):not(:empty))
+  > :where(:not(ul).active),
+.menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  color: hsl(var(--pc) / var(--tw-text-opacity));
+  background: linear-gradient(
+    270deg,
+    rgba(194, 224, 235, 0.548) 0%,
+    rgba(184, 220, 182, 0.308) 100%
+  );
+}
+.category {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url(./assets/bg/category-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.react-tabs__tab--selected {
+  background: linear-gradient(
+    270deg,
+    rgba(194, 224, 235, 1) 0%,
+    rgba(184, 220, 182, 1) 100%
+  );
+}

@@ -1,13 +1,6 @@
-import { Helmet } from "react-helmet";
-
 const Contact = () => {
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Kidol | Home</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
       <div className="w-full md:w-3/4 mx-auto">
         <section className="text-gray-600 body-font">
           <div className="">

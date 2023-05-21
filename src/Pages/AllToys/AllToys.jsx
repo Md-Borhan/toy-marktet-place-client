@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 
 const AllToys = () => {
   const products = useLoaderData();
-  console.log(products);
 
   return (
     <div>
@@ -18,6 +17,21 @@ const AllToys = () => {
       <h1 className="sm:text-5xl my-16 pb-8 text-center text-2xl font-bold title-font mb-4 text-gray-700">
         All Toys
       </h1>
+      <div className="form-control px-5 md:px-0 mb-6">
+        <div className="relative w-full mx-auto md:w-1/2">
+          <input
+            type="search"
+            required
+            placeholder="Search Toys"
+            className="input border-gray-300 border w-full"
+          />
+          <input
+            className="bg-gradient-to-r input rounded-full from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 px-10 shadow-md text-black mt-2 md:mt-0 md:absolute right-0 border-gray-500 font-semibold border"
+            type="submit"
+            value="Search"
+          />
+        </div>
+      </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}

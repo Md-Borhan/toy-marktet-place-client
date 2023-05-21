@@ -13,6 +13,9 @@ const Navbar = () => {
         console.log(error.message);
       });
   };
+  const isActiveRoute = (path) => {
+    return location.pathname === path; // Check if the current path matches the provided path
+  };
   return (
     <div className="">
       <div className="navbar px-4 md:px-8 bg-white justify-between">
@@ -36,40 +39,69 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu mainMenu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link className="font-medium text-lg" to="/">
+                <Link
+                  className={`font-medium text-lg ${
+                    isActiveRoute("/") ? "active" : ""
+                  }`}
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/allToys" className="font-medium text-lg">
+                <Link
+                  className={`font-medium text-lg ${
+                    isActiveRoute("/allToys") ? "active" : ""
+                  }`}
+                  to="/allToys"
+                >
                   All Toys
                 </Link>
               </li>
               {user && (
                 <li>
-                  <Link to="/myToys" className="font-medium text-lg">
+                  <Link
+                    to="/myToys"
+                    className={`font-medium text-lg ${
+                      isActiveRoute("/myToys") ? "active" : ""
+                    }`}
+                  >
                     My Toys
                   </Link>
                 </li>
               )}
               {user && (
                 <li>
-                  <Link to="/addToys" className="font-medium text-lg">
+                  <Link
+                    to="/addToys"
+                    className={`font-medium text-lg ${
+                      isActiveRoute("/addToys") ? "active" : ""
+                    }`}
+                  >
                     Add a Toys
                   </Link>
                 </li>
               )}
               <li>
-                <Link to="/blog" className="font-medium text-lg">
+                <Link
+                  to="/blog"
+                  className={`font-medium text-lg ${
+                    isActiveRoute("/blog") ? "active" : ""
+                  }`}
+                >
                   Blogs
                 </Link>
               </li>
               {user ? (
                 <li>
-                  <Link onClick={handleLogout} className="font-medium text-lg">
+                  <Link
+                    to="/"
+                    onClick={handleLogout}
+                    className="font-medium text-lg"
+                  >
                     Logout
                   </Link>
                 </li>
@@ -95,39 +127,68 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden w-auto lg:flex navbar-end">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal mainMenu px-1">
             <li>
-              <Link className="font-medium text-lg" to="/">
+              <Link
+                className={`font-medium text-lg ${
+                  isActiveRoute("/") ? "active" : ""
+                }`}
+                to="/"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/allToys" className="font-medium text-lg">
+              <Link
+                className={`font-medium text-lg ${
+                  isActiveRoute("/allToys") ? "active" : ""
+                }`}
+                to="/allToys"
+              >
                 All Toys
               </Link>
             </li>
             {user && (
               <li>
-                <Link to="/myToys" className="font-medium text-lg">
+                <Link
+                  to="/myToys"
+                  className={`font-medium text-lg ${
+                    isActiveRoute("/myToys") ? "active" : ""
+                  }`}
+                >
                   My Toys
                 </Link>
               </li>
             )}
             {user && (
               <li>
-                <Link to="/addToys" className="font-medium text-lg">
+                <Link
+                  to="/addToys"
+                  className={`font-medium text-lg ${
+                    isActiveRoute("/addToys") ? "active" : ""
+                  }`}
+                >
                   Add a Toys
                 </Link>
               </li>
             )}
             <li>
-              <Link to="/blog" className="font-medium text-lg">
+              <Link
+                to="/blog"
+                className={`font-medium text-lg ${
+                  isActiveRoute("/blog") ? "active" : ""
+                }`}
+              >
                 Blogs
               </Link>
             </li>
             {user ? (
               <li>
-                <Link onClick={handleLogout} className="font-medium text-lg">
+                <Link
+                  to="/"
+                  onClick={handleLogout}
+                  className="font-medium text-lg"
+                >
                   Logout
                 </Link>
               </li>

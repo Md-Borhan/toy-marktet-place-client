@@ -21,7 +21,6 @@ const AddToys = () => {
     const picture = form.photo.value;
     const category = selectValue;
     const email = form.email.value;
-    const password = form.password.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
@@ -35,7 +34,6 @@ const AddToys = () => {
       rating,
       quantity,
       email,
-      password,
       description,
     };
     console.log(addedToys);
@@ -52,7 +50,7 @@ const AddToys = () => {
         if (data.insertedId) {
           toast.success("Successfully Toys Added!");
         }
-        console.log(data);
+        form.reset();
       });
   };
   return (
@@ -112,13 +110,13 @@ const AddToys = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text">Quantity</span>
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   required
-                  name="password"
-                  placeholder="password"
+                  name="quantity"
+                  placeholder="Quantity"
                   className="input input-bordered"
                 />
               </div>
@@ -148,6 +146,7 @@ const AddToys = () => {
                   className="input input-bordered"
                   onChange={handleChangeValue}
                 >
+                  <option value="">Pick your favorite Category</option>
                   <option value="PoliceCar">Police Car</option>
                   <option value="FireTruck">Mini Fire Truck</option>
                   <option value="RegularCar">Regular Car</option>
@@ -180,30 +179,19 @@ const AddToys = () => {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 items-center gap-5 mb-5">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Quantity</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  name="quantity"
-                  placeholder="Quantity"
-                  className="input input-bordered"
-                />
-              </div>
+            <div className="mb-5">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Description</span>
                 </label>
-                <input
-                  type="text"
+                <textarea
                   required
                   name="description"
                   placeholder="description"
-                  className="input input-bordered"
-                />
+                  className="input h-28 input-bordered"
+                  cols="30"
+                  rows="10"
+                ></textarea>
               </div>
             </div>
             <div className="form-control w-full  md:w-1/3 mx-auto mt-6">
