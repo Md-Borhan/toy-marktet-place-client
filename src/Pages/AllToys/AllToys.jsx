@@ -2,9 +2,24 @@ import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
 import { Link, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 const AllToys = () => {
-  const products = useLoaderData();
+  const product = useLoaderData();
+  const [toys, setToys] = useState(product);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const searchText = event.target.search.value;
+    fetch(
+      `https://assignment-11-sever-delta.vercel.app/toySearch/${searchText}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+        console.log(data);
+      });
+  };
 
   return (
     <div>
@@ -18,10 +33,14 @@ const AllToys = () => {
         All Toys
       </h1>
       <div className="form-control px-5 md:px-0 mb-6">
-        <div className="relative w-full mx-auto md:w-1/2">
+        <form
+          onSubmit={handleSearch}
+          className="relative w-full mx-auto md:w-1/2"
+        >
           <input
             type="search"
             required
+            name="search"
             placeholder="Search Toys"
             className="input border-gray-300 border w-full"
           />
@@ -30,9 +49,9 @@ const AllToys = () => {
             type="submit"
             value="Search"
           />
-        </div>
+        </form>
       </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto pb-10">
         <table className="table w-full">
           {/* head */}
           <thead>
@@ -48,7 +67,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            {products?.map((product, index) => (
+            {toys?.map((product, index) => (
               <tr key={product?._id}>
                 <th>{index + 1}</th>
                 <td>{product.sellerName}</td>

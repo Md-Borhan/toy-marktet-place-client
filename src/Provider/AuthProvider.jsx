@@ -61,7 +61,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     (async function () {
-      const res = await fetch("http://localhost:5500/allToys");
+      const res = await fetch(
+        "https://assignment-11-sever-delta.vercel.app/allToys"
+      );
       const data = await res.json();
       setProducts(data);
     })();

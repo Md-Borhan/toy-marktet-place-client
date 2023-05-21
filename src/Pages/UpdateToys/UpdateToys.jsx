@@ -21,7 +21,7 @@ const UpdateToys = () => {
       description,
     };
 
-    fetch(`http://localhost:5500/updateToy/${_id}`, {
+    fetch(`https://assignment-11-sever-delta.vercel.app/updateToy/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -127,7 +127,7 @@ const UpdateToys = () => {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5500/allToys/${id}`)
+    fetch(`https://assignment-11-sever-delta.vercel.app/allToys/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setToy(data);
@@ -149,7 +149,7 @@ const UpdateToys = () => {
       description,
     };
 
-    fetch(`http://localhost:5500/updateToy/${id}`, {
+    fetch(`https://assignment-11-sever-delta.vercel.app/updateToy/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

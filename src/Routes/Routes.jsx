@@ -46,7 +46,7 @@ const router = createBrowserRouter([
   {
     path: "/allToys",
     element: <AllToys></AllToys>,
-    loader: () => fetch("http://localhost:5500/allToys"),
+    loader: () => fetch("https://assignment-11-sever-delta.vercel.app/allToys"),
   },
   {
     path: "/toyDetails/:id",
@@ -55,7 +55,10 @@ const router = createBrowserRouter([
         <ToysDetails></ToysDetails>
       </ProtectRoute>
     ),
-    loader: ({ params }) => fetch(`http://localhost:5500/allToys/${params.id}`),
+    loader: ({ params }) =>
+      fetch(
+        `https://assignment-11-sever-delta.vercel.app/allToys/${params.id}`
+      ),
   },
   {
     path: "/myToys",
@@ -69,12 +72,17 @@ const router = createBrowserRouter([
     path: "/updateToys/:id",
     element: <UpdateToys></UpdateToys>,
     loader: ({ params }) =>
-      fetch(`http://localhost:5500/updateToy/${params.id}`),
+      fetch(
+        `https://assignment-11-sever-delta.vercel.app/updateToy/${params.id}`
+      ),
   },
   {
     path: "/categoryDetails/:id",
     element: <CategoryDetails></CategoryDetails>,
-    loader: ({ params }) => fetch(`http://localhost:5500/allToys/${params.id}`),
+    loader: ({ params }) =>
+      fetch(
+        `https://assignment-11-sever-delta.vercel.app/allToys/${params.id}`
+      ),
   },
 ]);
 

@@ -21,7 +21,7 @@ const Gallery = () => {
         </div>
         <div data-aos="fade-up">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3">
-            {products?.map((sd) => (
+            {products?.slice(0, 6).map((sd) => (
               <div key={sd._id} className=" rounded-lg">
                 <img
                   alt="gallery"

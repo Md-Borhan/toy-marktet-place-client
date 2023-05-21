@@ -13,7 +13,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5500/myToys/${user?.email}`;
+    const url = `https://assignment-11-sever-delta.vercel.app/myToys/${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -22,7 +22,7 @@ const MyToys = () => {
   }, [user]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5500/deleteToy/${id}`, {
+    fetch(`https://assignment-11-sever-delta.vercel.app/deleteToy/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

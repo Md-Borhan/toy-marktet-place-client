@@ -38,7 +38,7 @@ const AddToys = () => {
     };
     console.log(addedToys);
 
-    fetch("http://localhost:5500/allToys", {
+    fetch("https://assignment-11-sever-delta.vercel.app/allToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
