@@ -114,7 +114,7 @@ export default UpdateToys;
 // UpdateToys.js
 
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Navbar from "../Share/Navbar/Navbar";
 import Footer from "../Share/Footer/Footer";
@@ -225,11 +225,9 @@ const UpdateToys = () => {
             </div>
           </div>
           <div className="form-control w-full md:w-1/3 mx-auto mt-6">
-            <Link to="/myToys">
-              <button className="btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 px-10 shadow-md text-black border-gray-500 font-semibold border">
-                Submit
-              </button>
-            </Link>
+            <button className="btn bg-gradient-to-r from-[#b8dcb6] to-[#c2e0eb] shadow-blue-200 px-10 shadow-md text-black border-gray-500 font-semibold border">
+              Submit
+            </button>
           </div>
         </form>
       </div>
